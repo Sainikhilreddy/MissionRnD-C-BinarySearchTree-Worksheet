@@ -36,7 +36,7 @@ Return -1 for invalid inputs
 int height(struct node *);
 int lsum(struct node *);
 int rsum(struct node *);
-int ls, rs;
+int leftsum, rightsum;
 struct node{
 	struct node * left;
 	int data;
@@ -75,10 +75,10 @@ int get_left_subtree_sum(struct node *root){
 int lsum(struct node *root)
 {
 	if (root == NULL)
-		return ls;
-	ls += lsum(root->left);
-	ls += lsum(root->right);
-	return ls;
+		return leftsum;
+	leftsum += lsum(root->left);
+	leftsum += lsum(root->right);
+	return leftsum;
 	
 
 }
@@ -91,10 +91,10 @@ int get_right_subtree_sum(struct node *root){
 int rsum(struct node *root)
 {
 	if (root == NULL)
-		return rs;
-	rs += rsum(root->left);
-	rs += rsum(root->right);
-	return rs;
+		return rightsum;
+	rightsum += rsum(root->left);
+	rightsum += rsum(root->right);
+	return rightsum;
 
 }
 
