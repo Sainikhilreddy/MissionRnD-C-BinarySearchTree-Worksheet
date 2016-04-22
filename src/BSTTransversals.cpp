@@ -1,4 +1,4 @@
-/*
+  /*
 
 Given a Binary Search Tree ,Calculate its Inorder ,Postorder and PreOrder
 
@@ -15,7 +15,7 @@ it and understand how testing works .
 */
 
 #include <stdio.h>
-
+int i,j,k;
 struct node{
 	struct node * left;
 	int data;
@@ -24,12 +24,27 @@ struct node{
 
 
 void inorder(struct node *root, int *arr){
-	
+	if (root == NULL||arr==NULL)
+		return;
+	inorder(root->left, arr);
+	*(arr+i) = root->data;
+	i++;
+	inorder(root->right, arr);
 }
 void preorder(struct node *root, int *arr){
-	
+	if (root == NULL || arr == NULL)
+		return;
+	*(arr + j) = root->data;
+	j++;
+	preorder(root->left, arr);
+	preorder(root->right, arr);
 }
 void postorder(struct node *root, int *arr){
-	
+	if (root == NULL || arr == NULL)
+		return;
+	postorder(root->left, arr);
+	postorder(root->right, arr);
+	*(arr + k) = root->data;
+	k++;
 }
 

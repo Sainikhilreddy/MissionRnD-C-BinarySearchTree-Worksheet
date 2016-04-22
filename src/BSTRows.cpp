@@ -29,9 +29,31 @@ struct node{
 	struct node *right;
 };
 
-
+int a[20];
 
 int* BSTRighttoLeftRows(struct node* root)
 {
-    return NULL;
+	int f=-1,r=-1,i=0;
+	struct node *p[20];
+	if (root == NULL)
+		return NULL;
+	p[++f] = root;
+	r++;
+	
+	while (f<=r)
+	{
+		a[i] = p[f]->data;
+		
+		i++;
+		if (p[f]->right != NULL)
+			p[++r] = root->right;
+		if (p[f]->left != NULL)
+			p[++r] = root->left;
+		f++;
+		
+			
+
+	}
+	
+	return a;
 }
