@@ -1,4 +1,4 @@
-/*
+ /*
 Given a Sorted Array of integers .Create a new Balanced Binary Search Tree from the Array
 and return the head of the new BST .
 
@@ -35,7 +35,34 @@ struct node{
 
 
 struct node * convert_array_to_bst(int *arr, int len){
-	
-	return NULL;
+	if (arr == NULL)
+		return NULL;
+	struct node *root,*p,*q;
+	int i;
+	root = (struct node *)malloc(sizeof(struct node));
+	root->left = NULL;
+	root->right = NULL;
+	p = root;
+	root->data = arr[len / 2];
+	for (i = len / 2 - 1; i >= 0; i--)
+	{
+		q = (struct node *)malloc(sizeof(struct node));
+		q->left = NULL;
+		q->right = NULL;
+		q->data = arr[i];
+		p->left = q;
+		p = q;
+	}
+	p = root;
+	for (i = len / 2 + 1; i < len; i++)
+	{
+		q = (struct node *)malloc(sizeof(struct node));
+		q->left = NULL;
+		q->right = NULL;
+		q->data = arr[i];
+		p->right = q;
+		p = q;
+	}
+	return root;
 }
 

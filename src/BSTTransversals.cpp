@@ -27,15 +27,15 @@ void inorder(struct node *root, int *arr){
 	if (root == NULL||arr==NULL)
 		return;
 	inorder(root->left, arr);
-	*(arr+i) = root->data;
-	i++;
+	arr[i++] = root->data;
+	
 	inorder(root->right, arr);
 }
 void preorder(struct node *root, int *arr){
 	if (root == NULL || arr == NULL)
 		return;
-	*(arr + j) = root->data;
-	j++;
+	arr[j++] = root->data;
+	
 	preorder(root->left, arr);
 	preorder(root->right, arr);
 }
@@ -44,7 +44,7 @@ void postorder(struct node *root, int *arr){
 		return;
 	postorder(root->left, arr);
 	postorder(root->right, arr);
-	*(arr + k) = root->data;
-	k++;
+	arr[k++] = root->data;
+	
 }
 

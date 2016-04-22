@@ -134,7 +134,7 @@ namespace spec
 		void Rows_NullCheck()
 		{
 			struct node * temp = convert_array_to_bst(NULL, 1);
-			
+
 			if (temp != NULL){
 				Assert::AreEqual(1, 2, L"Array to BST Null CheckFailed", 1, 2);
 			}
@@ -183,7 +183,7 @@ namespace spec
 					c2 = 1;
 				}
 			}
-			check =check+ c2+c3;
+			check = check + c2 + c3;
 			Assert::AreEqual(3, check, L"Array to BSt Three failed", 1, 2);
 		};
 
@@ -208,7 +208,7 @@ namespace spec
 							c2 = 1;
 						}
 					}
-				
+
 				}
 			}
 			check = check + c2 + c3;
@@ -218,7 +218,7 @@ namespace spec
 		[TestMethod, Timeout(2000)]
 		void ArraytoBST_MediumCase1()
 		{
-			int arr[10] = { 1,20,30,40,45,60,80};
+			int arr[10] = { 1, 20, 30, 40, 45, 60, 80 };
 			struct node *root = NULL;
 			root = convert_array_to_bst(arr, 7);
 			int check = isBalanced(root);
@@ -235,14 +235,14 @@ namespace spec
 					c2 = 1;
 				}
 			}
-			check =check+ c2+c3;
+			check = check + c2 + c3;
 			Assert::AreEqual(3, check, L"Array to BST Medium case 1 failed", 1, 2);
 		};
 
 		[TestMethod, Timeout(1000)]
 		void ArraytoBST_Large()
 		{
-			int arr[10] = { -123, 12, 120, 455, 1160, 2100 ,4545,12124,12344};
+			int arr[10] = { -123, 12, 120, 455, 1160, 2100, 4545, 12124, 12344 };
 			struct node *root = NULL;
 			root = convert_array_to_bst(arr, 9);
 			int check = isBalanced(root);
@@ -258,10 +258,10 @@ namespace spec
 					c2 = 1;
 				}
 			}
-			check =check+c3+ c2;
+			check = check + c3 + c2;
 			Assert::AreEqual(3, check, L"Array to BST Large case 1 failed", 1, 2);
 		};
-
 		
+
 	};
 }
