@@ -58,9 +58,9 @@ int main(){
 
 			
 				printf("%d\t",results[i][j]);*/
-	m = BSTRighttoLeftRows(root);
+	/*m = BSTRighttoLeftRows(root);
 	for (i = 0; i < 5; i++)
-		printf("%d\t", m[i]);
+		printf("%d\t", m[i]);*/
 
 }
 struct node * add(struct node *root, int data)

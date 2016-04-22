@@ -33,23 +33,23 @@ int a[20];
 
 int* BSTRighttoLeftRows(struct node* root)
 {
-	int f=-1,r=-1,i=0;
+	int front=-1,rear=-1,i=0;
 	struct node *p[20];
 	if (root == NULL)
 		return NULL;
-	p[++f] = root;
-	r++;
+	p[++front] = root;
+	rear++;
 	
-	while (f<=r)
+	while (front<=rear)
 	{
-		a[i] = p[f]->data;
+		a[i] = p[front]->data;
 		
 		i++;
-		if (p[f]->right != NULL)
-			p[++r] = root->right;
-		if (p[f]->left != NULL)
-			p[++r] = root->left;
-		f++;
+		if (p[front]->right != NULL)
+			p[++rear] = root->right;
+		if (p[front]->left != NULL)
+			p[++rear] = root->left;
+		front++;
 		
 			
 
